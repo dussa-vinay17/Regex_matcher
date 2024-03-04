@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex Matching Web App Development Project
+    </title>
+</head>
+<body>
+    <h1>Regex Matching Web App</h1>
+    <form action="/results" method="post">
+        <label for="test_string">Test String:</label>
+        <input type="text" id="test_string" name="test_string" size="50" placeholder="Enter test string"><br><br>
+        
+        <label for="regex_pattern">Regex Pattern:</label>
+        <input type="text" id="regex_pattern" name="regex_pattern"  placeholder="Enter regex pattern" required><br>
+
+        <button type="submit">Test Regex</button>
+    </form>
+
+    <h2>Email Validation </h2>
+    <form action="/validate_email" method="post">
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" size="50" placeholder="Enter your email" required><br><br>
+        
+        <button type="submit">Validate Email</button>
+    </form>
+    <div id="validation_result">
+        {% if message %}
+            <p>{{ message }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
